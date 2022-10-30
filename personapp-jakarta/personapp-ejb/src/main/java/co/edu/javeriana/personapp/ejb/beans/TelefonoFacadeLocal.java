@@ -4,33 +4,29 @@
  */
 package co.edu.javeriana.personapp.ejb.beans;
 
-import co.edu.javeriana.personapp.ejb.entities.Persona;
+import co.edu.javeriana.personapp.ejb.entities.Telefono;
 import java.util.List;
 import javax.ejb.Local;
-
-import javax.inject.Named;
-
 
 /**
  *
  * @author User
  */
 @Local
-public interface PersonaFacadeLocal {
+public interface TelefonoFacadeLocal {
 
-    void create(Persona persona);
+    void create(Telefono telefono);
 
-    void edit(Persona persona);
+    void edit(Telefono telefono);
 
-    void remove(Persona persona);
+    void remove(Telefono telefono);
 
-    Persona find(Object id);
+    Telefono find(Object id);
 
-    List<Persona> findAll();
+    List<Telefono> findAll();
 
-    List<Persona> findRange(int[] range);
+    List<Telefono> findRange(int[] range);
 
     int count();
     
-    public Persona find(int id);
 }

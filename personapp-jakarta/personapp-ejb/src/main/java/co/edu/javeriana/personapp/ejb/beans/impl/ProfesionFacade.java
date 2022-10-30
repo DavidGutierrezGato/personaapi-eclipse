@@ -12,6 +12,10 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 
 /**
  *
@@ -31,6 +35,7 @@ public class ProfesionFacade extends AbstractFacade<Profesion> implements Profes
     public ProfesionFacade() {
         super(Profesion.class);
     }
+
 
     @Override
     public Profesion find(Object id) {
@@ -84,8 +89,5 @@ public class ProfesionFacade extends AbstractFacade<Profesion> implements Profes
         
         query.executeUpdate();
     }
-    
-    
-    
     
 }

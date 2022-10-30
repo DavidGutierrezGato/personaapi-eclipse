@@ -12,6 +12,9 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 /**
  *
@@ -31,6 +34,7 @@ public class TelefonoFacade extends AbstractFacade<Telefono> implements Telefono
     public TelefonoFacade() {
         super(Telefono.class);
     }
+
 
     @Override
     public void create(Telefono entity) {
@@ -84,8 +88,4 @@ public class TelefonoFacade extends AbstractFacade<Telefono> implements Telefono
         query.executeUpdate();
         
     }
-
-    
-    
-    
 }

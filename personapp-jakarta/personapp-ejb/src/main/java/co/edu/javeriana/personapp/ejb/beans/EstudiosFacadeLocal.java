@@ -4,33 +4,29 @@
  */
 package co.edu.javeriana.personapp.ejb.beans;
 
-import co.edu.javeriana.personapp.ejb.entities.Persona;
+import co.edu.javeriana.personapp.ejb.entities.Estudios;
 import java.util.List;
 import javax.ejb.Local;
-
-import javax.inject.Named;
-
 
 /**
  *
  * @author User
  */
 @Local
-public interface PersonaFacadeLocal {
+public interface EstudiosFacadeLocal {
 
-    void create(Persona persona);
+    void create(Estudios estudios);
 
-    void edit(Persona persona);
+    void edit(Estudios estudios);
 
-    void remove(Persona persona);
+    void remove(Estudios estudios);
 
-    Persona find(Object id);
+    Estudios find(Object id);
 
-    List<Persona> findAll();
+    List<Estudios> findAll();
 
-    List<Persona> findRange(int[] range);
+    List<Estudios> findRange(int[] range);
 
     int count();
     
-    public Persona find(int id);
 }

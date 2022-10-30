@@ -13,6 +13,10 @@ import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 
 /**
  *
@@ -32,6 +36,7 @@ public class EstudiosFacade extends AbstractFacade<Estudios> implements Estudios
     public EstudiosFacade() {
         super(Estudios.class);
     }
+
 
     
     public Estudios find(Object id,Object id2 ) {
@@ -84,7 +89,5 @@ public class EstudiosFacade extends AbstractFacade<Estudios> implements Estudios
         query.setParameter(2, entity.getProfesion().getNom());
         
         query.executeUpdate();
-    }
-    
-    
+    }    
 }

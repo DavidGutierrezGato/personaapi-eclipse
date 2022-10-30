@@ -9,6 +9,7 @@ import co.edu.javeriana.personapp.ejb.beans.PersonaFacadeLocal;
 import co.edu.javeriana.personapp.ejb.entities.Persona;
 import java.util.List;
 import javax.ejb.Stateless;
+import javax.inject.Named;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.TypedQuery;
@@ -36,6 +37,7 @@ public class PersonaFacade extends AbstractFacade<Persona> implements PersonaFac
         TypedQuery<Persona> query = em.createQuery("select p from persona p",Persona.class);
         return query.getResultList();
     }
+
     
     //void create(Persona persona);
 
@@ -90,7 +92,4 @@ public class PersonaFacade extends AbstractFacade<Persona> implements PersonaFac
         return query.getSingleResult();
         
     }
-    
-
-    
 }
