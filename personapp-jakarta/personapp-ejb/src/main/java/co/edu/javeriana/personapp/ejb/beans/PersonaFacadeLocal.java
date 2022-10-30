@@ -7,6 +7,7 @@ package co.edu.javeriana.personapp.ejb.beans;
 import co.edu.javeriana.personapp.ejb.entities.Persona;
 import java.util.List;
 import javax.ejb.Local;
+import javax.inject.Named;
 
 /**
  *
