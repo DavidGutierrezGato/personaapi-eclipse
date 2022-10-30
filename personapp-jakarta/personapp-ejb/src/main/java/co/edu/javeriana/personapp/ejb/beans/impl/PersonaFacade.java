@@ -37,4 +37,59 @@ public class PersonaFacade extends AbstractFacade<Persona> implements PersonaFac
         TypedQuery<Persona> query = em.createQuery("select p from persona p",Persona.class);
         return query.getResultList();
     }
+
+    
+    //void create(Persona persona);
+
+    @Override
+    public void create(Persona persona)
+    {
+        TypedQuery<Persona> query = em.createQuery("INSERT INTO persona VALUES(" 
+                + persona.getCc().toString() +"," +
+                persona.getNombre() +"," +
+                persona.getApellido()+"," +
+                persona.getGenero().toString() +")" ,Persona.class);
+        
+        query.executeUpdate();
+    }
+    
+    //void edit(Persona persona);
+    
+    @Override
+    public void edit(Persona persona)
+    {
+        TypedQuery<Persona> query = em.createQuery("UPDATE persona "
+                + "SET nombre = ?1 , apellido = ?2 , genero = ?3 "
+                + "WHERE cc = ?4",  Persona.class);
+        query.setParameter(1, persona.getNombre());
+        query.setParameter(2, persona.getApellido());
+        query.setParameter(3, persona.getGenero());
+        query.setParameter(4, persona.getCc());
+               
+        
+        query.executeUpdate();
+    }
+
+    //void remove(Persona persona);
+
+    @Override
+    public void remove(Persona persona)
+    {
+        TypedQuery<Persona> query = em.createQuery("DELETE FROM persona WHERE persona.cc = ?1" ,Persona.class);
+        query.setParameter(1, persona.getCc());
+        
+        query.executeUpdate();
+    }
+
+    
+    public Persona find(int id)
+    {
+       
+        TypedQuery<Persona> query;
+        query = em.createQuery("select p from persona p WHERE p.Cc = ?1 ",Persona.class);
+        query.setParameter(1, id);
+        
+        return query.getSingleResult();
+        
+    }
 }
